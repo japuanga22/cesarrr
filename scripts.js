@@ -18,7 +18,7 @@ function encrypt(){
     for(var i = 0; i< pInput.length; i++){
         let ascii_num = pInput[i].charCodeAt() // retornara o codigo individual
         let soma = ascii_num + shiftInput
-        soma >= 65 && soma <= 90 ? resolvido += String.fromCharCode(soma) : soma > 90 ? resolvido += String.fromCharCode(65+(soma & 91)) : resolvido += pInput[i]
+        soma >= 65 && soma <= 120 ? resolvido += String.fromCharCode(soma) : soma > 90 ? resolvido += String.fromCharCode(65+(soma & 91)) : resolvido += pInput[i]
     }
     eInput.value = resolvido
 }
@@ -32,3 +32,5 @@ function copyText() {
 
 copyBtn.addEventListener('click', copyText)
 encryptBtn.addEventListener('click', encrypt)
+
+

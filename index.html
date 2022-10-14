@@ -24,6 +24,59 @@
             <textarea type='text' id='encryptedInput-1' placeholder='Texto criptografado aparecera aqui...'></textarea>
         </label>
     </div>
+
+    <div id="container-4">
+        <div class="escreva">
+            <label for="text">Escreva um texto Base64</label>
+            <input type="text" id="text" />
+        </div>
+          <div>
+            <div class="divAjuste">
+              <input type="radio" name="rad" class="radio" />
+              <label for="radio">Codificar</label>
+            </div>
+            <div class="divAjuste">
+              <input type="radio" name="rad" class="radio" />
+              <label for="radio">Decodificar</label>
+            </div>
+        </div>
+          <div class="divResultado">
+            <label for="resultado">Resultado</label>
+            <input type="text" class="resultado" readonly />
+          </div>
+          <button class="button">CODIFICAR</button>
+    </div>
+
+    <script>
+    var radio = document.querySelectorAll(".radio"); // radio codificar decodificar
+  var botao = document.querySelector(".button"); // botão final do resultado
+    var resultado = document.querySelector(".resultado");
+    var text = document.querySelector("#text");
+  
+    botao.addEventListener("click", function (event) {
+    event.preventDefault();
+  
+      if (radio[0].checked) {
+      var valorTexto = text.value;
+      resultado.value = btoa(valorTexto);
+    } else {
+      var valorTexto = text.value;
+      resultado.value = atob(valorTexto);
+    }
+  });
+  
+      radio[0].addEventListener("click", function () {
+    if (radio[0].checked) {
+      botao.textContent = "CODIFICAR";
+    }
+  });
+  
+  radio[1].addEventListener("click", function () {
+    if (radio[1].checked) {
+      botao.textContent = "DECODIFICAR";
+    }
+  });
+      </script>
       
  <script src="scripts.js"></script>   
 </body>

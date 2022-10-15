@@ -33,4 +33,35 @@ function copyText() {
 copyBtn.addEventListener('click', copyText)
 encryptBtn.addEventListener('click', encrypt)
 
+//base64
+
+var radio = document.querySelectorAll(".radio"); // radio codificar decodificar
+var botao = document.querySelector(".button"); // botão final do resultado
+  var resultado = document.querySelector(".resultado");
+  var text = document.querySelector("#text");
+
+  botao.addEventListener("click", function (event) {
+  event.preventDefault();
+
+    if (radio[0].checked) {
+    var valorTexto = text.value;
+    resultado.value = btoa(valorTexto);
+  } else {
+    var valorTexto = text.value;
+    resultado.value = atob(valorTexto);
+  }
+});
+
+    radio[0].addEventListener("click", function () {
+  if (radio[0].checked) {
+    botao.textContent = "CODIFICAR";
+  }
+});
+
+radio[1].addEventListener("click", function () {
+  if (radio[1].checked) {
+    botao.textContent = "DECODIFICAR";
+  }
+});
+
 

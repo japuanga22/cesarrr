@@ -63,6 +63,12 @@ textarea{
     padding: 4px 12px;
 }
 
+#encrypt-btn:hover, #copyToClipBoard:hover{
+    color: black;
+    transition: 0.5;
+}
+
+
 #shiftInput{
     transform: scale(2);
     outline: none;
@@ -106,3 +112,17 @@ textarea{
     top: -550px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
+
+#container-4, label {
+    font-family: "Fruktur", cursive;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;  
+    text-align: center;
+}
+
+.label:hover {
+    cursor: pointer;
+    background: black;
+}
+
